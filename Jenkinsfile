@@ -17,7 +17,7 @@ pipeline {
             steps {
                 echo 'Performing Deployment...'
                 // Add deployment steps here
-            }
+          }
         }
         stage('Test') {
             when {
@@ -37,15 +37,7 @@ pipeline {
                 // Add tagging steps here
             }
         }
-        stage('Cleanup') {
-            when {
-                expression { params.DESTROY_AFTER }
-            }
-            steps {
-                echo 'Performing Cleanup...'
-                // Add cleanup steps here
-            }
-        }
+       
     }
     options {
         disableConcurrentBuilds()
